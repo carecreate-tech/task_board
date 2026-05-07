@@ -37,6 +37,41 @@
 - `git push --force` は原則禁止（共有ブランチへの force push は厳禁）
 - コミット前にテストが通ることを確認する
 
+## デプロイ先
+
+- **本番 URL**: https://carecreate-tech.github.io/task_board/
+- **デプロイ方法**: `main` ブランチへのプッシュで GitHub Actions が自動ビルド・デプロイ
+- **ワークフロー**: `.github/workflows/deploy.yml`
+
+## 技術スタック
+
+| 用途 | 技術 |
+|------|------|
+| UI フレームワーク | React 18 |
+| ビルドツール | Vite 6 |
+| 言語 | JavaScript (JSX) |
+| スタイリング | Plain CSS (BEM) |
+| 状態管理 | React useState / useEffect |
+| 永続化 | localStorage |
+| ホスティング | GitHub Pages |
+| CI/CD | GitHub Actions |
+
+## コンポーネント命名規約
+
+### ファイル・コンポーネント名
+- コンポーネントファイルは **PascalCase**: `TaskBoard.jsx`, `TaskItem.jsx`
+- CSS ファイルはコンポーネントと同名: `TaskBoard.css`
+- 配置先: `src/components/`
+
+### CSS クラス名（BEM）
+- **Block**: コンポーネント名をケバブケースで `board`, `task-item`
+- **Element**: `block__element` 形式 `board__title`, `task-item__text`
+- **Modifier**: `block--modifier` 形式 `task-item--done`
+
+### その他
+- ローカルストレージのキーは `task-board-<用途>` 形式: `task-board-tasks`
+- イベントハンドラは `handle<Event>` 形式: `handleAdd`, `handleKeyDown`
+
 ## コーディング規則
 
 - コメントは「なぜ」が自明でない場合のみ記述する
