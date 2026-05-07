@@ -1,0 +1,127 @@
+.board {
+  width: 100%;
+  max-width: 560px;
+  height: fit-content;
+}
+
+.board__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.board__input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.board__input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.board__input:focus {
+  border-color: #6366f1;
+}
+
+.board__add-btn {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.board__add-btn:hover {
+  background: #4f46e5;
+}
+
+.board__empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  padding: 40px 0;
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.2s, box-shadow 0.15s;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.task-item--done {
+  opacity: 0.5;
+}
+
+.task-item__checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #6366f1;
+}
+
+.task-item__text {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+.task-item--done .task-item__text {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-item__delete {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.task-item__delete:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
